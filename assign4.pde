@@ -195,8 +195,8 @@ void draw() {
 				// Change this part to show soil and stone images based on soilHealth value
 				// NOTE: To avoid errors on webpage, you can either use floor(j / 4) or (int)(j / 4) to make sure it's an integer.
 				int areaIndex = floor(j / 4);
-				image(soils[areaIndex][(constrain(soilHealth[i][j],0,15)-1)/3], i * SOIL_SIZE, j * SOIL_SIZE);
-        if(soilHealth[i][j]>15){image(stones[0][(int(constrain(soilHealth[i][j],0,30)-16)/3)],i * SOIL_SIZE, j * SOIL_SIZE);}
+				image(soils[areaIndex][floor((constrain(soilHealth[i][j],0,15)-1)/3)], i * SOIL_SIZE, j * SOIL_SIZE);
+        if(soilHealth[i][j]>15){image(stones[0][floor((constrain(soilHealth[i][j],0,30)-16)/3)],i * SOIL_SIZE, j * SOIL_SIZE);}
         if(soilHealth[i][j]>30){image(stones[1][int((soilHealth[i][j]-31)/3)],i * SOIL_SIZE, j * SOIL_SIZE);}
         if(soilHealth[i][j]<=0){image(soilEmpty,i * SOIL_SIZE, j * SOIL_SIZE);}
 				
